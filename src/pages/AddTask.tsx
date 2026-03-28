@@ -41,7 +41,7 @@ const AddTask = () => {
   const { toasts } = useToasterStore();
 
   useEffect(() => {
-    document.title = "Todo App - Add Task";
+    document.title = "TodoApp - 할 일 추가";
   }, []);
 
   useEffect(() => {
@@ -135,7 +135,7 @@ const AddTask = () => {
 
   return (
     <>
-      <TopBar title="Add New Task" />
+      <TopBar title="새 할 일 추가" />
       <Container>
         <CustomEmojiPicker
           emoji={typeof emoji === "string" ? emoji : undefined}
@@ -147,9 +147,9 @@ const AddTask = () => {
         {/* fix for input colors */}
         <InputThemeProvider>
           <StyledInput
-            label="Task Name"
+            label="할 일 이름"
             name="name"
-            placeholder="Enter task name"
+            placeholder="할 일 이름을 입력하세요"
             autoComplete="off"
             value={name}
             onChange={handleNameChange}
@@ -165,9 +165,9 @@ const AddTask = () => {
             }
           />
           <StyledInput
-            label="Task Description"
+            label="설명"
             name="name"
-            placeholder="Enter task description"
+            placeholder="설명을 입력하세요 (선택)"
             autoComplete="off"
             value={description}
             onChange={handleDescriptionChange}
@@ -184,9 +184,9 @@ const AddTask = () => {
             }
           />
           <StyledInput
-            label="Task Deadline"
+            label="마감일"
             name="name"
-            placeholder="Enter deadline date"
+            placeholder="마감일을 선택하세요"
             type="datetime-local"
             value={deadline}
             onChange={handleDeadlineChange}
@@ -201,7 +201,7 @@ const AddTask = () => {
                 startAdornment:
                   deadline && deadline !== "" ? (
                     <InputAdornment position="start">
-                      <Tooltip title="Clear">
+                      <Tooltip title="초기화">
                         <IconButton color="error" onClick={() => setDeadline("")}>
                           <CancelRounded />
                         </IconButton>

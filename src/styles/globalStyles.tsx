@@ -17,7 +17,7 @@ export const GlobalStyles = () => {
     <Global
       styles={css`
         * {
-          font-family: "Poppins", sans-serif !important;
+          font-family: "Noto Sans KR", "Poppins", sans-serif !important;
           -webkit-tap-highlight-color: transparent;
           &::selection {
             background-color: ${theme.primary + "e1"};
@@ -26,7 +26,7 @@ export const GlobalStyles = () => {
           }
         }
         :root {
-          font-family: "Poppins", sans-serif;
+          font-family: "Noto Sans KR", "Poppins", sans-serif;
           line-height: 1.5;
           font-weight: 400;
           color-scheme: ${theme.darkmode ? "dark" : "light"};

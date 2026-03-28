@@ -198,7 +198,7 @@ export const TaskMenu = () => {
         return (
           <ReadAloudContainer>
             <ReadAloudHeader translate="yes">
-              <RecordVoiceOver /> Read aloud: <span translate="no">{selectedTask?.name}</span>
+              <RecordVoiceOver /> 읽어주기: <span translate="no">{selectedTask?.name}</span>
             </ReadAloudHeader>
             <span translate="yes" style={{ marginTop: "8px", fontSize: "16px" }}>
               Voice: <span translate="no">{utterThis.voice?.name || "Default"}</span>
@@ -261,12 +261,12 @@ export const TaskMenu = () => {
   const menuItems: JSX.Element[] = [
     <StyledMenuItem key="done" onClick={handleMarkAsDone}>
       {selectedTask.done ? <Close /> : <Done />}
-      &nbsp; {selectedTask.done ? "Mark as not done" : "Mark as done"}
+      &nbsp; {selectedTask.done ? "완료 취소" : "완료하기"}
     </StyledMenuItem>,
 
     <StyledMenuItem key="pin" onClick={handlePin}>
       <PushPinRounded sx={{ textDecoration: "line-through" }} />
-      &nbsp; {selectedTask.pinned ? "Unpin" : "Pin"}
+      &nbsp; {selectedTask.pinned ? "고정 해제" : "고정"}
     </StyledMenuItem>,
 
     ...(multipleSelectedTasks.length === 0

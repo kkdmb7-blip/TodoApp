@@ -36,7 +36,7 @@ const Home = () => {
   const isMobile = useResponsiveDisplay();
 
   useEffect(() => {
-    document.title = "Todo App";
+    document.title = "TodoApp";
   }, []);
 
   // Calculate these values only when tasks change
@@ -67,11 +67,11 @@ const Home = () => {
   const timeGreeting = useMemo(() => {
     const currentHour = new Date().getHours();
     if (currentHour < 12 && currentHour >= 5) {
-      return "Good morning";
+      return "좋은 아침이에요";
     } else if (currentHour < 18 && currentHour > 12) {
-      return "Good afternoon";
+      return "좋은 오후예요";
     } else {
-      return "Good evening";
+      return "좋은 저녁이에요";
     }
   }, []);
 
@@ -80,17 +80,17 @@ const Home = () => {
     const percentage = taskStats.completedTaskPercentage;
     switch (true) {
       case percentage === 0:
-        return "No tasks completed yet. Keep going!";
+        return "아직 완료한 할 일이 없어요. 화이팅!";
       case percentage === 100:
-        return "Congratulations! All tasks completed!";
+        return "축하해요! 모든 할 일을 완료했어요! 🎉";
       case percentage >= 75:
-        return "Almost there!";
+        return "거의 다 왔어요!";
       case percentage >= 50:
-        return "You're halfway there! Keep it up!";
+        return "절반 완료! 계속 해봐요!";
       case percentage >= 25:
-        return "You're making good progress.";
+        return "잘 하고 있어요.";
       default:
-        return "You're just getting started.";
+        return "이제 시작이에요!";
     }
   }, [taskStats.completedTaskPercentage]);
 
@@ -119,7 +119,7 @@ const Home = () => {
 
       {!isOnline && (
         <Offline>
-          <WifiOff /> You're offline but you can use the app!
+          <WifiOff /> 오프라인 상태예요. 앱은 계속 사용할 수 있어요!
         </Offline>
       )}
       {tasks.length > 0 && settings.showProgressBar && (
@@ -131,7 +131,7 @@ const Home = () => {
                 updateShowProgressBar(false);
                 showToast(
                   <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                    Progress bar hidden. You can enable it in settings.
+                    진행바가 숨겨졌어요. 설정에서 다시 켤 수 있어요.
                     <Button
                       variant="contained"
                       sx={{ p: "12px 32px" }}
@@ -170,8 +170,8 @@ const Home = () => {
             <TaskCountTextContainer>
               <TaskCountHeader>
                 {taskStats.completedTasksCount === 0
-                  ? `You have ${tasks.length} task${tasks.length > 1 ? "s" : ""} to complete.`
-                  : `You've completed ${taskStats.completedTasksCount} out of ${tasks.length} tasks.`}
+                  ? `할 일이 ${tasks.length}개 있어요.`
+                  : `${tasks.length}개 중 ${taskStats.completedTasksCount}개 완료했어요.`}
               </TaskCountHeader>
               <TaskCompletionText>{taskCompletionText}</TaskCompletionText>
               {taskStats.tasksWithDeadlineTodayCount > 0 && (
@@ -182,9 +182,9 @@ const Home = () => {
                   }}
                 >
                   <TodayRounded sx={{ fontSize: "20px", verticalAlign: "middle" }} />
-                  &nbsp;Tasks due today:&nbsp;
+                  &nbsp;오늘 마감:Tasks due today:&nbsp;nbsp;
                   <span translate="no">
-                    {new Intl.ListFormat("en", { style: "long" }).format(
+                    {new Intl.ListFormat("ko", { style: "long" }).format(
                       taskStats.tasksDueTodayNames,
                     )}
                   </span>
@@ -204,12 +204,12 @@ const Home = () => {
         <TasksList />
       </Suspense>
       {!isMobile && (
-        <Tooltip title={tasks.length > 0 ? "Add New Task" : "Add Task"} placement="left">
+        <Tooltip title={tasks.length > 0 ? "새 할 일 추가" : "할 일 추가"} placement="left">
           <AddButton
             animate={tasks.length === 0}
             glow={settings.enableGlow}
             onClick={() => n("add")}
-            aria-label="Add Task"
+            aria-label="할 일 추가"
           >
             <AddRounded style={{ fontSize: "44px" }} />
           </AddButton>

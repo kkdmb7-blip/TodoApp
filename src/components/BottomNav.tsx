@@ -84,7 +84,7 @@ export const BottomNav = (): JSX.Element | null => {
       >
         <NavigationButton
           onClick={() => n("/")}
-          label="Tasks"
+          label="할 일"
           icon={
             <Badge
               color="primary"
@@ -97,7 +97,7 @@ export const BottomNav = (): JSX.Element | null => {
         />
         <NavigationButton
           onClick={() => n("/categories")}
-          label="Categories"
+          label="카테고리"
           icon={<CategoryRounded sx={{ fontSize: smallIconSize }} />}
           disabled={!settings.enableCategories}
         />
@@ -117,12 +117,12 @@ export const BottomNav = (): JSX.Element | null => {
         />
         <NavigationButton
           onClick={() => n("transfer")}
-          label="Transfer"
+          label="가져오기"
           icon={<GetAppRounded sx={{ fontSize: smallIconSize }} />}
         />
         <NavigationButton
           onClick={() => n("user")}
-          label="Profile"
+          label="프로필"
           icon={<PersonRounded sx={{ fontSize: smallIconSize }} />}
         />
       </StyledBottomNavigation>

@@ -411,7 +411,7 @@ export const TasksList: React.FC = () => {
               <SearchInput
                 inputRef={searchRef}
                 color="primary"
-                placeholder="Search for task..."
+                placeholder="할 일 검색..."
                 autoComplete="off"
                 value={search}
                 disabled={moveMode}
@@ -509,7 +509,7 @@ export const TasksList: React.FC = () => {
             </div>
             {/* TODO: add more features */}
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <Tooltip title="Mark selected as done">
+              <Tooltip title="선택 완료">
                 <IconButton
                   sx={{ color: getFontColor(theme.secondary) }}
                   size="large"
@@ -518,12 +518,12 @@ export const TasksList: React.FC = () => {
                   <DoneAll />
                 </IconButton>
               </Tooltip>
-              <Tooltip title="Delete selected">
+              <Tooltip title="선택 삭제">
                 <IconButton color="error" size="large" onClick={handleDeleteSelected}>
                   <Delete />
                 </IconButton>
               </Tooltip>
-              <Tooltip sx={{ color: getFontColor(theme.secondary) }} title="Cancel">
+              <Tooltip sx={{ color: getFontColor(theme.secondary) }} title="취소">
                 <IconButton size="large" onClick={() => setMultipleSelectedTasks([])}>
                   <CancelRounded />
                 </IconButton>
@@ -535,9 +535,9 @@ export const TasksList: React.FC = () => {
           <TaskActionContainer>
             <div>
               <h3>
-                <MoveUpRounded /> &nbsp; Move Mode Enabled
+                <MoveUpRounded /> &nbsp; 이동 모드 활성화
               </h3>
-              <span>Organize tasks by dragging and dropping.</span>
+              <span>드래그로 할 일 순서를 바꿔보세요.</span>
             </div>
             <Button variant="contained" onClick={() => setMoveMode(false)}>
               Done
@@ -666,16 +666,16 @@ export const TasksList: React.FC = () => {
           )
         ) : (
           <NoTasks>
-            <span>You don't have any tasks yet</span>
+            <span>아직 할 일이 없어요</span>
             <br />
-            Click on the <span>+</span> button to add one
+            아래 <span>+</span> 버튼을 눌러 추가해보세요
           </NoTasks>
         )}
         {search && orderedTasks.length === 0 && user.tasks.length > 0 ? (
           <TaskNotFound>
-            <b>No tasks found</b>
+            <b>할 일을 찾을 수 없어요</b>
             <br />
-            Try searching with different keywords.
+            다른 키워드로 검색해보세요.
             <div style={{ marginTop: "14px" }}>
               <TaskIcon scale={0.8} />
             </div>
@@ -689,8 +689,8 @@ export const TasksList: React.FC = () => {
       </TasksContainer>
       <Dialog open={deleteDialogOpen} onClose={cancelDeleteTask}>
         <CustomDialogTitle
-          title="Delete Task"
-          subTitle="Are you sure you want to delete this task?"
+          title="할 일 삭제"
+          subTitle="이 할 일을 삭제할까요?"
           onClose={cancelDeleteTask}
           icon={<Delete />}
         />
@@ -715,8 +715,8 @@ export const TasksList: React.FC = () => {
       </Dialog>
       <Dialog open={deleteSelectedOpen}>
         <CustomDialogTitle
-          title="Delete selected tasks"
-          subTitle="Confirm to delete selected tasks"
+          title="선택한 할 일 삭제"
+          subTitle="선택한 할 일을 삭제할까요?"
           icon={<DeleteRounded />}
         />
         <DialogContent translate="no">

@@ -239,7 +239,7 @@ const Categories = () => {
 
   return (
     <>
-      <TopBar title="Categories" />
+      <TopBar title="카테고리" />
       <CategoriesContainer>
         {user.categories.length > 0 ? (
           <CategoryElementsContainer>
@@ -337,7 +337,7 @@ const Categories = () => {
           <InputThemeProvider>
             <CategoryInput
               required
-              label="Category name"
+              label="카테고리 이름"
               placeholder="Enter category name"
               value={name}
               onChange={handleNameChange}
@@ -461,7 +461,7 @@ const Categories = () => {
               }}
             >
               <EditNameInput
-                label="Enter category name"
+                label="카테고리 이름 입력"
                 placeholder="Enter category name"
                 value={editName}
                 error={editNameError !== "" || editName.length === 0}

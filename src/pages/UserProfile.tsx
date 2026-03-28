@@ -280,7 +280,7 @@ const UserProfile = () => {
 
         <TextField
           sx={{ width: "300px", marginTop: "8px" }}
-          label={name === null ? "Add Name" : "Change Name"}
+          label={name === null ? "이름 추가" : "이름 변경"}
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSaveName()}
@@ -322,7 +322,7 @@ const UserProfile = () => {
         />
         <DialogContent>
           <TextField
-            label="Link to profile picture"
+            label="프로필 사진 링크"
             placeholder="Enter link to profile picture..."
             sx={{ my: "8px", width: "100%" }}
             value={profilePictureURL}

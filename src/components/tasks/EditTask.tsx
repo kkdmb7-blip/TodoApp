@@ -173,7 +173,7 @@ export const EditTask = ({ open, task, onClose }: EditTaskProps) => {
           type="task"
         />
         <StyledInput
-          label="Name"
+          label="이름"
           name="name"
           autoComplete="off"
           value={editedTask?.name || ""}
@@ -190,7 +190,7 @@ export const EditTask = ({ open, task, onClose }: EditTaskProps) => {
           }
         />
         <StyledInput
-          label="Description"
+          label="설명"
           name="description"
           autoComplete="off"
           value={editedTask?.description || ""}
@@ -208,7 +208,7 @@ export const EditTask = ({ open, task, onClose }: EditTaskProps) => {
           }
         />
         <StyledInput
-          label="Deadline date"
+          label="마감일"
           name="deadline"
           type="datetime-local"
           value={
